@@ -1,4 +1,4 @@
-package fri.ris.sokol;
+package fri.ris.sokolris;
 
 import java.util.*;
 
