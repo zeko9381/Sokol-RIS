@@ -16,7 +16,12 @@ public class Poveljnik extends Clan {
    private int[] lokacija;
    /** @pdOid db2e6504-c9d1-4e24-a4fa-0ca08dde321e */
    private String status;
-   
+
+   public Poveljnik(String ime, String priimek, String cin, String specializacija) {
+      super(ime, priimek, cin, specializacija);
+      this.cin = "Poveljnik";
+   }
+
    /** @pdOid 2e8bcaa9-596b-47c0-9d6a-9cdc6b0cfa3e */
    public void dodajClana() {
       // TODO: implement
