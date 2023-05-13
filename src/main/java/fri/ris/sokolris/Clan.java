@@ -69,25 +69,22 @@ public class Clan {
    
    /** @pdOid 018172de-ab3d-4981-b3bd-a3e86f1cd54a */
    public String vrniCin() {
-      // TODO: implement
-      return null;
+      return getCin();
    }
    
    /** @pdOid 95a4b8a0-a8bf-4f3d-a1fe-883226365ba9 */
    public String vrniStanje() {
-      // TODO: implement
-      return null;
+      return getStatus();
    }
    
    /** @pdOid 610cda3b-4ace-4c7a-a18c-f385145076e8 */
    public String vrniSpec() {
-      // TODO: implement
-      return null;
+      return getSpecializacija();
    }
    
    /** @pdOid f559708a-b620-4db1-b7dd-dbfbbb6104ac */
-   public void nastaviStanje() {
-      // TODO: implement
+   public void nastaviStanje(String tmp) {
+      this.status = new SimpleStringProperty(tmp);
    }
 
 }

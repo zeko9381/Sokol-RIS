@@ -26,10 +26,6 @@ public class Poveljnik extends Clan {
    public void dodajClana() {
       // TODO: implement
    }
-   
-   /** @pdOid 0db2a34e-da2b-4386-80d6-4caee85b59c8 */
-   public void oddajPorocilo() {
-      // TODO: implement
-   }
+
 
 }

@@ -1,17 +1,61 @@
 package fri.ris.sokolris;
 
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+import javafx.fxml.FXML;
+import javafx.scene.control.SelectionMode;
+import javafx.scene.control.TableColumn;
+import javafx.scene.control.TableView;
+import javafx.scene.control.cell.PropertyValueFactory;
+
 import java.util.*;
 
 /** @pdOid 73a051ab-fe74-4e00-a911-11c4be2e0c64 */
 public class ZmPoveljnikAktivirajClane {
+
+   // Definicija vsega za TableView
+   @FXML
+   private TableView tabela;
+   @FXML
+   private TableColumn tabelaIme;
+   @FXML
+   private TableColumn tabelaPriimek;
+   @FXML
+   private TableColumn tabelaCin;
+   @FXML
+   private TableColumn tabelaSpec;
+   @FXML
+   private TableColumn tabelaStanje;
+
+
+   @FXML
+   public void initialize() {
+
+
+      tabelaIme.setCellValueFactory(
+              new PropertyValueFactory<Clan,String>("ime")
+      );
+      tabelaPriimek.setCellValueFactory(
+              new PropertyValueFactory<Clan, String>("priimek")
+      );
+      tabelaCin.setCellValueFactory(
+              new PropertyValueFactory<Clan, String>("cin")
+      );
+      tabelaSpec.setCellValueFactory(
+              new PropertyValueFactory<Clan, String>("specializacija")
+      );
+      tabelaStanje.setCellValueFactory(
+              new PropertyValueFactory<Clan, String>("status")
+      );
+
+      tabela.setItems(BazaClanov_SIM.clani);
+
+      tabela.getSelectionModel().setSelectionMode(SelectionMode.MULTIPLE);
+   }
+
    /** @pdRoleInfo migr=no name=KAktivirajClane assc=association5 mult=1..1 */
    public KAktivirajClane kAktivirajClane;
-   
-   /** @pdOid e9aec7da-46ae-4d45-a9d9-75878b66c164 */
-   public void prikaziStanjeClana() {
-      // TODO: implement
-   }
-   
+
    /** @pdOid a1425f07-b7dd-447f-a053-e262af458ed4 */
    public void aktivirajClana() {
       // TODO: implement
