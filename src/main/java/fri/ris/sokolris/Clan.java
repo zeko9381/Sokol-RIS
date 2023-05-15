@@ -11,9 +11,9 @@ public class Clan {
    /** @pdOid debbcc56-c39d-4753-8c77-45a4d36c0f7f */
    private final SimpleStringProperty priimek;
    /** @pdOid ceea4c40-592f-4adc-a0a4-af863ad95f22 */
-   private SimpleStringProperty cin;
+   private final SimpleStringProperty cin;
    /** @pdOid 85989417-569f-4eac-849c-3fd6fd9c9349 */
-   private SimpleStringProperty specializacija;
+   private final SimpleStringProperty specializacija;
    /** @pdOid 6c55a04b-3aa1-4ad5-9886-ec2c701a2a8d */
    private int[] lokacija;
    /** @pdOid f3250509-6aaf-47c9-957a-3bb5e6d0830c */
