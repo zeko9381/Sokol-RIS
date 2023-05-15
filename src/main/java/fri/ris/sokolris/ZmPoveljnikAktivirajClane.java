@@ -176,8 +176,8 @@ public class ZmPoveljnikAktivirajClane {
       Dialog<ButtonType> dialog = new Dialog<>();
       dialog.setTitle("O programu");
 
-      Label message = new Label("Sokol\n\nVerzija: 1.1\nAvtorja: Jan Zajc in Blaž Celin");
-      message.setFont(Font.font(20));
+      Label message = new Label("Sokol\n\nVerzija: 1.1\nAvtorja:\n - Jan Zajc (63210367)\n - Blaž Celin (63200069)");
+      message.setFont(Font.font(16));
       VBox content = new VBox(message);
       dialog.getDialogPane().setContent(content);
 
