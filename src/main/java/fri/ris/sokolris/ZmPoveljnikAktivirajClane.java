@@ -12,14 +12,11 @@ import javafx.scene.text.Font;
  * @pdOid 73a051ab-fe74-4e00-a911-11c4be2e0c64
  */
 public class ZmPoveljnikAktivirajClane {
-
-    private static ObservableList clani;
     /**
      * @pdRoleInfo migr=no name=KAktivirajClane assc=association5 mult=1..1
      */
     public KAktivirajClane KAktivirajClane = new KAktivirajClane();
 
-    // Definicija vsega za TableView
     @FXML
     private TableView tabela;
     @FXML
@@ -39,11 +36,12 @@ public class ZmPoveljnikAktivirajClane {
     @FXML
     private Label naslov;
     private final Poveljnik poveljnik = new Poveljnik("Peter", "Kostrevc", "Poveljnik", "");
+    private static ObservableList clani;
 
     @FXML
     public void initialize() {
         prijava();
-        naslov.setText("Aktivacija članov za intervencijo " + KAktivirajClane.intervencija.getSifra());
+        naslov.setText("Aktivacija članov za intervencijo " + KAktivirajClane.intervencija.vrniSifro());
     }
 
     /**
@@ -125,9 +123,7 @@ public class ZmPoveljnikAktivirajClane {
         }
     }
 
-    /**
-     * @pdOid c3d0d40b-b94a-44b8-a958-b6e44d70f67b
-     */
+    /** @pdOid e8a078b3-e9e9-4205-8e64-16e1e1eb50c7 */
     public void prijava() {
         if (KAktivirajClane.preveriPravice(poveljnik)) {
             clani = KAktivirajClane.vrniSeznamProstihClanov();

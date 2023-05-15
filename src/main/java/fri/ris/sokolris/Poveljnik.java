@@ -13,6 +13,7 @@ public class Poveljnik extends Clan {
    /** @pdOid db2e6504-c9d1-4e24-a4fa-0ca08dde321e */
    private String status;
 
+   /** @pdOid 9a981c68-678a-4758-be91-f060041adf45 */
    public Poveljnik(String ime, String priimek, String cin, String specializacija) {
       super(ime, priimek, cin, specializacija);
       this.cin = "Poveljnik";

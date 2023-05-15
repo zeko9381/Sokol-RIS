@@ -2,18 +2,14 @@ package fri.ris.sokolris;
 
 import javafx.collections.ObservableList;
 
-import java.util.ArrayList;
-import java.util.Random;
-
 /**
  * @pdOid 89d19efa-a3bf-48fc-864c-05ef4693a09e
  */
 public class KAktivirajClane {
-    /**
-     * @pdRoleInfo migr=no name=SvObvescevalniSistemDrustva assc=association1 mult=0..1
-     */
+    /** @pdRoleInfo migr=no name=SvObvescevalniSistemDrustva assc=association1 mult=0..1 */
     public SvObvescevalniSistemDrustva svObvescevalniSistemDrustva = new SvObvescevalniSistemDrustva();
 
+    /** @pdRoleInfo migr=no name=Intervencija assc=association7 mult=0..1 */
     public Intervencija intervencija = new Intervencija();
 
     /**
@@ -36,7 +32,7 @@ public class KAktivirajClane {
      * @pdOid e0daa1b2-0a7b-4261-9d0e-cb5e02849438
      */
     public void aktivirajClana(Clan clan) {
-        clan.nastaviStanje("Aktiviran (" + intervencija.getSifra() + ")");
+        clan.nastaviStanje("Aktiviran (" + intervencija.vrniSifro() + ")");
         intervencija.dodajClana(clan);
         svObvescevalniSistemDrustva.posljiObvestilo(clan);
     }
@@ -48,7 +44,7 @@ public class KAktivirajClane {
     public void aktivirajVseClane(ObservableList clani) {
         for (int i = 0; i < clani.size(); i++) {
             Clan tmp = (Clan) clani.get(i);
-            tmp.nastaviStanje("Aktiviran (" + intervencija.getSifra() + ")");
+            tmp.nastaviStanje("Aktiviran (" + intervencija.vrniSifro() + ")");
             intervencija.dodajClana(tmp);
             svObvescevalniSistemDrustva.posljiObvestilo(tmp);
         }
