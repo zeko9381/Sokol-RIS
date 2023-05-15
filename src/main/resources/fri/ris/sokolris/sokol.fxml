@@ -5,42 +5,77 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.text.*?>
 
-<BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="690.0" xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fri.ris.sokolris.ZmPoveljnikAktivirajClane">
-   <center>
-      <VBox BorderPane.alignment="CENTER">
-         <children>
-            <TableView fx:id="tabela" prefHeight="200.0" prefWidth="200.0" tableMenuButtonVisible="true">
-              <columns>
-                <TableColumn fx:id="tabelaIme" editable="false" prefWidth="75.0" text="Ime" />
-                <TableColumn fx:id="tabelaPriimek" prefWidth="75.0" text="Priimek" />
-                  <TableColumn fx:id="tabelaCin" prefWidth="75.0" text="Čin" />
-                  <TableColumn fx:id="tabelaSpec" prefWidth="75.0" text="Specializacija" />
-                  <TableColumn fx:id="tabelaStanje" prefWidth="75.0" text="Stanje" />
-              </columns>
-               <columnResizePolicy>
-                  <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
-               </columnResizePolicy>
-            </TableView>
-            <HBox alignment="CENTER" prefHeight="100.0" prefWidth="200.0" spacing="50.0">
+
+<VBox xmlns="http://javafx.com/javafx/17.0.2-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="fri.ris.sokolris.ZmPoveljnikAktivirajClane">
+   <children>
+      <MenuBar>
+        <menus>
+          <Menu mnemonicParsing="false" text="Datoteka">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#exitApp" text="Izhod" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Možnosti">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#prikaziSeznamClanov" text="Prikaži seznam članov" />
+                  <MenuItem mnemonicParsing="false" onAction="#prikaziCinClana" text="Prikaži čine članov" />
+                  <MenuItem mnemonicParsing="false" onAction="#prikaziSpecClana" text="Prikaži specijalizacije članov" />
+                  <MenuItem mnemonicParsing="false" onAction="#aktivirajClana" text="Aktiviraj izbrane člane" />
+                  <MenuItem mnemonicParsing="false" onAction="#aktivirajVseClane" text="Aktiviraj vse člane" />
+            </items>
+          </Menu>
+          <Menu mnemonicParsing="false" text="Ostalo">
+            <items>
+              <MenuItem mnemonicParsing="false" onAction="#about" text="O programu" />
+            </items>
+          </Menu>
+        </menus>
+      </MenuBar>
+      <BorderPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="690.0">
+         <center>
+            <VBox BorderPane.alignment="CENTER">
                <children>
-                  <Button defaultButton="true" mnemonicParsing="false" onAction="#initialize" text="Aktiviraj izbrane člane" />
-                  <Button mnemonicParsing="false" text="Aktiviraj vse člane" />
+                  <TableView fx:id="tabela" prefHeight="363.0" prefWidth="680.0" tableMenuButtonVisible="true">
+                    <columns>
+                      <TableColumn fx:id="tabelaIme" editable="false" prefWidth="75.0" text="Ime" />
+                      <TableColumn fx:id="tabelaPriimek" prefWidth="75.0" text="Priimek" />
+                        <TableColumn fx:id="tabelaCin" prefWidth="75.0" text="Čin" />
+                        <TableColumn fx:id="tabelaSpec" prefWidth="75.0" text="Specializacija" />
+                        <TableColumn fx:id="tabelaStanje" prefWidth="75.0" text="Stanje" />
+                    </columns>
+                     <columnResizePolicy>
+                        <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+                     </columnResizePolicy>
+                  </TableView>
+                  <HBox alignment="CENTER" prefHeight="74.0" prefWidth="680.0" spacing="50.0">
+                     <children>
+                        <Button defaultButton="true" mnemonicParsing="false" onAction="#aktivirajClana" text="Aktiviraj izbrane člane" />
+                        <Button mnemonicParsing="false" onAction="#aktivirajVseClane" text="Aktiviraj vse člane" />
+                     </children>
+                  </HBox>
+                  <HBox alignment="CENTER" layoutX="10.0" layoutY="210.0" prefHeight="49.0" prefWidth="680.0" spacing="50.0">
+                     <children>
+                        <Button layoutX="188.0" layoutY="48.0" mnemonicParsing="false" onAction="#prikaziSeznamClanov" text="Prikaži seznam članov" />
+                        <Button fx:id="btnCin" mnemonicParsing="false" onAction="#prikaziCinClana" text="Prikaži čine članov" />
+                        <Button fx:id="btnSpec" mnemonicParsing="false" onAction="#prikaziSpecClana" text="Prikaži specijalizacije članov" />
+                     </children>
+                  </HBox>
                </children>
-            </HBox>
-         </children>
-      </VBox>
-   </center>
-   <top>
-      <Label text="Aktivacija članov" BorderPane.alignment="CENTER">
-         <BorderPane.margin>
-            <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
-         </BorderPane.margin>
-         <font>
-            <Font size="24.0" />
-         </font>
-      </Label>
-   </top>
-   <padding>
-      <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
-   </padding>
-</BorderPane>
+            </VBox>
+         </center>
+         <top>
+            <Label text="Aktivacija članov" BorderPane.alignment="CENTER">
+               <BorderPane.margin>
+                  <Insets bottom="15.0" left="15.0" right="15.0" top="15.0" />
+               </BorderPane.margin>
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </top>
+         <padding>
+            <Insets bottom="5.0" left="5.0" right="5.0" top="5.0" />
+         </padding>
+      </BorderPane>
+   </children>
+</VBox>

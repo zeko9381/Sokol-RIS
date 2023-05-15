@@ -14,8 +14,8 @@ public class Intervencija {
    private String tip;
    
    /** @pdOid 9c0d2ebd-a5b3-48a2-9e02-8cbf8acbd4e2 */
-   public void dodajClana() {
-      // TODO: implement
+   public void dodajClana(Clan clan) {
+      aktiviraniClani.add(clan);
    }
 
 }
