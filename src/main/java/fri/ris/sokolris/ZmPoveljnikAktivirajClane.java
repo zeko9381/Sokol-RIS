@@ -91,7 +91,7 @@ public class ZmPoveljnikAktivirajClane {
                continue;
 
             if(name.equals(""))
-               KAktivirajClane.aktivirajClana(izbraniClani.get(i));
+               KAktivirajClane.aktivirajClana(izbraniClani.get(i), "ni oznake");
             else
                KAktivirajClane.aktivirajClana(izbraniClani.get(i), name);
 

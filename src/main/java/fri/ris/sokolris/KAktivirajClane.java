@@ -18,18 +18,19 @@ public class KAktivirajClane {
    /** @pdOid e0daa1b2-0a7b-4261-9d0e-cb5e02849438 */
    public void aktivirajClana(Clan clan, String intervencija) {
       clan.nastaviStanje("Aktiviran ("+intervencija+")");
+      Intervencija inter = new Intervencija(intervencija);
+      inter.dodajClana(clan);
    }
 
-   public void aktivirajClana(Clan clan) {
-      clan.nastaviStanje("Aktiviran");
-   }
 
    /** @pdOid 158e715b-da28-42b5-ae0d-7b371e6006fd */
    public void aktivirajVseClane(ObservableList clani) {
       for (int i = 0; i < clani.size(); i++) {
          Clan tmp = (Clan) clani.get(i);
          if(tmp.vrniStanje().equals("Na voljo"))
-            aktivirajClana(tmp);
+            aktivirajClana(tmp, "nujno");
+            Intervencija intervencija = new Intervencija("nujno");
+            intervencija.dodajClana(tmp);
       }
    }
    
